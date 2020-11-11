@@ -1,5 +1,6 @@
 /*
 bfs : デバッグ済み : https://atcoder.jp/contests/abc007/submissions/17923826
+mutable List → dequeに変更しようとしたが、dequeはまだ実験的実装らしくanotationしないといけないらしいので見送り
  */
 
 class Grid{
