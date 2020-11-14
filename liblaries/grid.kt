@@ -1,6 +1,7 @@
 /*
 bfs : デバッグ済み : https://atcoder.jp/contests/abc007/submissions/17923826
-mutable List → dequeに変更しようとしたが、dequeはまだ実験的実装らしくanotationしないといけないらしいので見送り
+mutableList→java.util.LinkedListに変更
+パフォーマンス向上は微々たるものだが、ちゃんとdequeが保証されているもののほうが良いと考えたので変更
  */
 
 class Grid{
@@ -64,10 +65,13 @@ class Grid{
         /**
         [start]から[goal]までのbfs。戻り地は手数で到達不可のときは-1
          */
-        var que = mutableListOf(0 to start)
+        // var que = mutableListOf(0 to start)
+        var que:LinkedList<Pair<Int,Pair<Int,Int>>> = LinkedList()
+        que.addLast(0 to start)
         var reach_step = -1
         while (que.size > 0){
-            val (step,pos) = que.removeAt(0)
+            // val (step,pos) = que.removeAt(0)
+            val (step,pos) = que.pollFirst()
             visit(pos)
             if (pos == goal){
                 reach_step = step
@@ -76,7 +80,8 @@ class Grid{
             val nextfree = getNextFree(pos)
             for (free in nextfree){
                 visit(free)
-                que.add(step+1 to free)
+                // que.add(step+1 to free)
+                que.addLast(step+1 to free)
             }
         }
         return reach_step
