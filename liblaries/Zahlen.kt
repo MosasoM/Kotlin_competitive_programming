@@ -1,4 +1,4 @@
-class Zahlen(){
+class Zahlen{
     /*
     整数問題系を扱う予定のクラス。
      */

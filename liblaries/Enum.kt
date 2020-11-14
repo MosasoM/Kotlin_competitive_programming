@@ -3,7 +3,7 @@ repcombをデバッグ済み:https://atcoder.jp/contests/abc021/submissions/1809
 repcombの計算で、comb,modpow,modinvについても使用するので、全デバッグ済みと考えて良いと思う。
  */
 
-class Enum(){
+class Enum{
     /*
     数え上げ(組み合わせとか)を扱うクラス。
      */
